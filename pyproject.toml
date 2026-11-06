@@ -9,6 +9,7 @@ dependencies = [
     "mcp>=2.3.0",
     "pydantic>=2.14.2",
     "pyjwt>=2.15.1",
+    "regex>=2026.9.29",
     "uvicorn>=0.54.0",
 ]
 
