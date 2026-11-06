@@ -4,8 +4,12 @@ version = "0.1.0"
 description = "MCP server, MCP security gateway, streaming PII guardrail, and LLM fallback router"
 requires-python = ">=3.11"
 dependencies = [
+    "fastapi>=0.162.0",
+    "httpx>=0.28.1",
     "mcp>=2.3.0",
     "pydantic>=2.14.2",
+    "pyjwt>=2.15.1",
+    "uvicorn>=0.54.0",
 ]
 
 [tool.uv]
