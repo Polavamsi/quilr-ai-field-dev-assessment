@@ -48,14 +48,14 @@ At the end of the stream, or when a choice reports `finish_reason`, the tail is 
 
 ## Measured cost
 
-`uv run python -m task3_pii_stream_guardrail.bench` streams the same reply directly from the mock and through the guardrail, over real HTTP, 20 runs each:
+`uv run python -m task3_pii_stream_guardrail.bench` streams the same reply directly from the mock and through the guardrail, over real HTTP, 20 runs each (MacBook Air, Python 3.12):
 
 |  | TTFT median | TTFT p95 | Total median |
 | --- | --- | --- | --- |
-| Direct to model | 38.8 ms | 52.5 ms | 1388.6 ms |
-| Through guardrail | 59.7 ms | 68.2 ms | 1391.7 ms |
+| Direct to model | 36.1 ms | 36.8 ms | 1432.5 ms |
+| Through guardrail | 60.6 ms | 67.2 ms | 1436.9 ms |
 
-Total stream time is unchanged. TTFT rises by about one upstream chunk interval (20 ms here). That cost is inherent: the reply's first word is held until the next chunk shows it is not the start of an email. Any correct streaming redactor has to wait that long.
+Total stream time rises by 4 ms (0.3%). TTFT rises by about one upstream chunk interval (20 ms here). That cost is inherent: the reply's first word is held until the next chunk shows it is not the start of an email. Any correct streaming redactor has to wait that long.
 
 ## Wire format
 
