@@ -18,7 +18,7 @@ uv sync
 uv run pytest
 ```
 
-234 tests, about 10 seconds. Tested on macOS and Linux with Python 3.12. Each task README has run instructions and a curl walkthrough.
+234 tests, about 10 seconds. Tested on macOS and Linux with Python 3.12. Each task README has run instructions, design notes and assumptions.
 
 ## Highlights
 
